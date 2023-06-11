@@ -23,13 +23,13 @@
   <div class="container">
     <button class="btnMain" id="btnPagar" onclick="abrirVentanaEmergente()">PAGAR</button>
     <script>
-      function abrirVentanaEmergente() {
-        // URL de la página HTML con el escáner QR
-        var urlVentanaEmergente = "escanearQR.html";
-    
-        // Abre una nueva ventana o pestaña con el escáner QR
-        window.open(urlVentanaEmergente, "_blank", "width=500,height=500");
-      }
+      // Obtener el botón de registro
+      var btnPagar = document.getElementById("btnPagar");
+      // Agregar un evento de click al botón de registro
+      btnPagar.addEventListener("click", function () {
+        // Redirigir al usuario a la página de registro
+        window.location.href = "escanearQR.html";
+      });
     </script>
     
 
@@ -61,8 +61,6 @@
     </script>
 
     <button onclick="">TARJETAS VINCULADAS</button>
-
-
   </div>
 
   <div class="containerTres">
@@ -80,9 +78,6 @@
 
     <button class="cs"><span class="material-symbols-outlined">account_circle</span><br>Opciones</button>
   </div>
-
-
-  
 
 </body>
 
