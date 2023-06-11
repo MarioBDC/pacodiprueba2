@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Registro</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!--ESTILOS CSS -->
+	<link rel="preload" href="css/registro.css" as="style">
+	<link rel="stylesheet" href="css/registro.css">
+	<!--FUENTES DE LETRA-->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Mitr&display=swap" rel="stylesheet">
+	<!--Scripts-->
+	<script src="js/jquery.min.js"></script>
+	<script src="js/EstadosyMunicipios.js"></script><!--Estados y municipios-->
+</head>
+
+<body>
+	<form>
+		<div class="container">
+			<img src="img/Logo300x100.png" alt="paga y cobre con PACO">
+		</div>
+
+		<h1>Registro PACO</h1>
+		<label for="nombre">Nombre:</label>
+		<input type="text" id="nombre" name="nombre" required>
+
+		<label for="nombre">Apellidos:</label>
+		<input type="text" id="apellido" name="apellido" required>
+
+		<label for="nusuario">Nombre de Ususario:</label>
+		<input type="text" id="nusuario" name="nusuario" required>
+
+		<label for="fecha-nacimiento">Fecha de nacimiento:</label>
+		<input type="date" id="fecha-nacimiento" name="fecha-nacimiento" required>
+		<script> //-----------se limita la fecha de nacimiento a 18 años atrás------------>
+			const fechaInput = document.getElementById('fecha-nacimiento');
+			const fechaMaxima = new Date();
+			fechaMaxima.setFullYear(fechaMaxima.getFullYear() - 18);
+			fechaInput.max = fechaMaxima.toISOString().slice(0, 10);
+		</script>
+
+		<!--Datos del domicilio -->
+		<label for="calle">Calle:</label>
+		<input type="text" id="calle" name="calle" required>
+		<label for="numExt">Numero Exterior:</label>
+		<input type="number" id="numExt" name="numExt" required>
+		<label for="numInt">Número Interior:</label>
+		<input type="number" id="numInt" name="numInt">
+		<label for="colonia">Colonia:</label>
+		<input type="text" id="colonia" name="colonia" required>
+		<label for="cp">Código postal:</label>
+		<input type="number" id="cp" name="cp" required>
+
+		<label for="estado">Estado:</label>
+		<select id="estado" name="estado" required>
+			<option value="">Selecciona un estado</option>
+			<!--<option value="Aguascalientes">Aguascalientes</option>-->
+			<!--<option value="Baja California">Baja California</option>-->
+			<!--<option value="Baja California Sur">Baja California Sur</option>-->
+			<!--<option value="Campeche">Campeche</option>-->
+			<!--<option value="Coahuila">Coahuila</option>-->
+			<!--<option value="Colima">Colima</option>-->
+			<!--<option value="Chiapas">Chiapas</option>-->
+			<!--<option value="Chihuahua">Chihuahua</option>-->
+			<!--<option value="Ciudad de México">Ciudad de México</option>-->
+			<!--<option value="Durango">Durango</option>-->
+			<!--<option value="Guanajuato">Guanajuato</option>-->
+			<!--<option value="Guerrero">Guerrero</option>-->
+			<!--<option value="Hidalgo">Hidalgo</option>-->
+			<!--<option value="Jalisco">Jalisco</option>-->
+			<!--<option value="México">México</option>-->
+			<!--<option value="Michoacán">Michoacán</option>-->
+			<!--<option value="Morelos">Morelos</option>-->
+			<!--<option value="Nayarit">Nayarit</option>-->
+			<!--<option value="Nuevo León">Nuevo León</option>-->
+			<!--<option value="Oaxaca">Oaxaca</option>-->
+			<!--<option value="Puebla">Puebla</option>-->
+			<!--<option value="Querétaro">Querétaro</option>-->
+			<!--<option value="Quintana Roo">Quintana Roo</option>-->
+			<!--<option value="San Luis Potosí">San Luis Potosí</option>-->
+			<!--<option value="Sinaloa">Sinaloa</option>-->
+			<!--<option value="Sonora">Sonora</option>-->
+			<!--<option value="Tabasco">Tabasco</option>-->
+			<!--<option value="Tamaulipas">Tamaulipas</option>-->
+			<!--<option value="Tlaxcala">Tlaxcala</option>-->
+			<option value="Veracruz">Veracruz</option>
+			<!--<option value="Yucatán">Yucatán</option>-->
+			<!--<option value="Zacatecas">Zacatecas</option>-->
+		</select>
+		<label for="municipio">Municipio:</label>
+		<select id="municipio" name="municipio" required>
+			<!-- Los municipios se actualizarán dinámicamente aquí -->
+		</select>
+
+
+		<label for="curp">CURP:</label>
+		<input type="text" id="curp" name="curp" maxlength="18" required>
+
+		<label for="numero-celular">Número de celular:</label>
+		<input type="tel" id="numero-celular" name="numero-celular" required>
+
+		<label for="Genero">Genero:</label>
+		<select type="tel" id="genero" name="genero" required>
+			<option value="opcion1">Masculino</option>
+			<option value="opcion2">Femenino</option>
+			<option value="opcion2">Prefiero no responder</option>
+		</select>
+
+		<label for="email">Correo electrónico:</label>
+		<input type="email" id="email" name="email" required>
+
+		<label for="contraseña">Contraseña:</label>
+		<input type="password" id="contraseña" name="contraseña" required>
+
+		<label for="confirmar-contraseña">Confirmar contraseña:</label>
+		<input type="password" id="confirmar-contraseña" name="confirmar-contraseña" required>
+
+		<input type="submit" value="Registrarse" onclick="confirmar()">
+		<script>
+			function confirmar() {
+				if (confirm("¿Está seguro de que sus datos son correctos?")) {
+					// Si el usuario hace clic en "Aceptar", se ejecuta el código para registrar los datos
+					console.log("Datos registrados correctamente.");
+				} else {
+					// Si el usuario hace clic en "Cancelar", no se realiza ninguna acción
+					console.log("Registro cancelado.");
+				}
+			}
+		</script>
+
+		<!-----------BOTÓN PARA IR AL LOGIN------------>
+		<label><br>¿Ya tienes cuenta?:</label>
+		<button id="btniniciar">Inicia sesión</button>
+		<script>
+			// Obtener el botón de registro
+			var btniniciar = document.getElementById("btniniciar");
+			// Agregar un evento de click al botón de registro
+			btniniciar.addEventListener("click", function () {
+				// Redirigir al usuario a la página de registro
+				window.location.href = "index.html";
+			});
+		</script>
+		<!--------------------------------------------->
+
+	</form>
+</body>
+
+</html>

@@ -1,0 +1,145 @@
+body {
+  font-family: 'Mitr', sans-serif;
+  background-color: #ffffff;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  font-size: 1.7rem;
+  font-weight: bold;
+  letter-spacing: 0em;
+  margin-right: 1rem;
+  margin-left: 1rem;
+  margin-top: .40rem;
+  margin-bottom: .40rem;
+  padding: 1rem 2rem;
+  border: none;
+  width: 95%;
+  height: 70px;
+  border-radius: 1.3rem;
+  background-color: #73cfb2;
+  color: #333;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+input[type="number"],
+input[type="text"] {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  justify-content: center;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+  width: 90%;
+  margin-left: 20px;
+}
+
+input[type="number"] {
+  font-size: 3.2rem;
+  text-align: center;
+  max-width: 100%;
+}
+
+input[type="text"] {
+  font-size: 2.2rem;
+  height: 50px;
+  margin-bottom: .5rem;
+  max-width: 100%;
+}
+
+div {
+  border: 1px solid #ccc;
+  border-radius: 30px;
+  padding: 4px;
+  margin: 20px auto;
+  margin-top: 20px;
+  max-width: 600px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+  text-align: center;
+  font-size: 3.7rem;
+}
+
+.qr {
+  display: flex;
+  justify-content: center;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.navBefore {
+  justify-content: right;
+  width: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 0.5rem 1rem rgba(255, 255, 255, 0.15);
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 700,
+    'GRAD' 0,
+    'opsz' 48;
+}
+@media (max-width: 1081px){
+  button{
+    font-size: 2rem;
+  }
+  h1{
+    font-size: 4rem;
+  }
+  input[type="number"]{
+    font-size: 4.5rem;
+  }
+  input[type="text"] {
+    font-size: 3.5rem;
+  }
+  div{
+  max-width: 95%;
+
+ }
+}
+
+@media (max-width: 767px) {
+  input[type="number"]{
+    font-size: 2.5;
+  }
+  input[type="text"] {
+    font-size: 1.8rem;
+  }
+
+  div {
+    max-width: 90%;
+  }
+}
+
+
+@media (max-width: 361px) {
+  button {
+    font-size: 1.2rem;
+    width: 90%;
+    height: 55px;
+  }
+
+  input[type="number"] {
+    font-size: 2rem;
+    max-width: 100%;
+  }
+
+  input[type="text"] {
+    font-size: 1.2rem;
+    height: 50px;
+    margin-bottom: .5rem;
+    max-width: 100%;
+  }
+}

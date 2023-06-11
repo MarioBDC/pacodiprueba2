@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Registro</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Bienvenid@s a pacodi donde podrá realizar cobros y pagos de una manera fácil.">
+
+	<meta name="theme-color" content="#cfe2f3">
+	<meta name="MobileOptimized" content="width">
+	<meta name="HandheldFriendly" content="true">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<link rel="shortcut icon" type="image/png" href="./img/iconLogo.png">
+	<link rel="apple-touch-icon" href="./img/iconLogo.png">
+	<link rel="apple-touch-startup-image" href="./img/iconLogo.png">
+	<link rel="manifest" href="manifest.json">
+	
+    <!--ESTILOS CSS -->
+    <link rel="preload" href="css/registro.css" as="style">
+    <link rel="stylesheet" href="css/registro.css">
+	<!--FUENTES DE LETRA-->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Mitr&display=swap" rel="stylesheet">
+</head>
+
+<body>
+	<form>
+		<img src="img/Logo300x100.png" alt="paga y cobra con PACO">
+		<h1>LOGIN</h1>
+		
+		<label for="nombre">Nombre de Ususario:</label>
+		<input type="text" id="nusuario" name="nusuario" required>
+
+		<label for="contraseña">Contraseña:</label>
+		<input type="password" id="contraseña" name="contraseña" required>
+
+		<input type="submit" id="btnIndex" value="Iniciar sesión">
+		<!-----------JS que simula un Inicio de sesión (BORRAR)------------>
+		<script>
+			// Obtener el botón de registro
+			var btnIndex = document.getElementById("btnIndex");
+			// Agregar un evento de click al botón de registro
+			btnIndex.addEventListener("click", function() {
+		  		// Redirigir al usuario a la página de registro
+		  		window.location.href = "principal.html";
+			});
+		</script>
+				
+		<!-----------BOTÓN PARA IR AL LOGIN------------>
+		<label ><br>¿No tienes cuenta?:</label>
+		<button id="btnRegistro"">Registrate</button>
+		<script>
+			// Obtener el botón de registro
+			var btnRegistro = document.getElementById("btnRegistro");
+			// Agregar un evento de click al botón de registro
+			btnRegistro.addEventListener("click", function() {
+		  		// Redirigir al usuario a la página de registro
+		  		window.location.href = "registro.html";
+			});
+		</script>
+		<!--------------------------------------------->
+	</form>
+</body>
+<script src="./script.js"></script>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mis Tarjetas</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f1f1f1;
+      padding: 20px;
+    }
+    
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+    
+    .tarjeta {
+      background-color: #fff;
+      border-radius: 20px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+    
+    .tarjeta h3 {
+      color: #333;
+      margin-top: 0;
+    }
+    
+    .tarjeta p {
+      margin-bottom: 0;
+    }
+    
+    .accion-tarjeta {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 10px;
+    }
+    
+    .editar-tarjeta,
+    .eliminar-tarjeta {
+      color: #666;
+      cursor: pointer;
+      margin-left: 10px;
+      text-decoration: underline;
+    }
+    
+    .editar-tarjeta:hover,
+    .eliminar-tarjeta:hover {
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <h1>Mis Tarjetas</h1>
+  
+  <!-- Aquí se mostrarán las tarjetas añadidas -->
+  <div id="tarjetas-container"></div>
+  
+  <script>
+    // Supongamos que tienes una lista de tarjetas almacenada en una variable llamada "tarjetas"
+    var tarjetas = [
+      { tipo: "Débito", numero: "1234 5678 9012 3456", titular: "Juan Pérez" },
+      { tipo: "Crédito", numero: "9876 5432 1098 7654", titular: "María Gómez" },
+      { tipo: "Crédito", numero: "5678 9012 3456 7890", titular: "Carlos López" }
+    ];
+    
+    // Función para mostrar las tarjetas en el contenedor
+    function mostrarTarjetas() {
+      var container = document.getElementById("tarjetas-container");
+      container.innerHTML = ""; // Limpiamos el contenedor antes de mostrar las tarjetas
+      
+      // Recorremos la lista de tarjetas y creamos los elementos HTML correspondientes
+      tarjetas.forEach(function(tarjeta, index) {
+        var cardDiv = document.createElement("div");
+        cardDiv.className = "tarjeta";
+        
+        var titleH3 = document.createElement("h3");
+        titleH3.textContent = tarjeta.tipo;
+        
+        var contentP1 = document.createElement("p");
+        contentP1.textContent = "Número: " + tarjeta.numero;
+        
+        var contentP2 = document.createElement("p");
+        contentP2.textContent = "Titular: " + tarjeta.titular;
+        
+        var actionsDiv = document.createElement("div");
+        actionsDiv.className = "accion-tarjeta";
+        
+        var editSpan = document.createElement("span");
+        editSpan.className = "editar-tarjeta";
+        editSpan.textContent = "Editar";
+        editSpan.addEventListener("click", function() {
+          // Lógica para editar la tarjeta
+          alert("Editar tarjeta: " + tarjeta.numero);
+        });
+        
+        var deleteSpan = document.createElement("span");
+        deleteSpan.className = "eliminar-tarjeta";
+        deleteSpan.textContent = "Eliminar";
+        deleteSpan.addEventListener("click", function() {
+          // Lógica para eliminar la tarjeta
+          tarjetas.splice(index, 1); // Elimina la tarjeta del array
+          mostrarTarjetas(); // Vuelve a mostrar las tarjetas actualizadas
+        });
+        
+        actionsDiv.appendChild(editSpan);
+        actionsDiv.appendChild(deleteSpan);
+        
+        cardDiv.appendChild(titleH3);
+        cardDiv.appendChild(contentP1);
+        cardDiv.appendChild(contentP2);
+        cardDiv.appendChild(actionsDiv);
+        
+        container.appendChild(cardDiv);
+      });
+    }
+    
+    // Llamamos a la función para mostrar las tarjetas al cargar la página
+    mostrarTarjetas();
+  </script>
+</body>
+</html>

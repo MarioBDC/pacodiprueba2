@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>paga y cobra con PACO</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--ESTILOS CSS -->
+  <link rel="preload" href="css/Index.css" as="style">
+  <link rel="stylesheet" href="css/Index.css">
+  <!--FUENTES DE LETRA-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Mitr&display=swap" rel="stylesheet">
+  <!--ICONOS-->
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+
+<body>
+  <div>
+    <img src="img/Logo300x100.png" alt="paga y cobra con PACO">
+  </div>
+  <div class="container">
+    <button class="btnMain" id="btnPagar" onclick="abrirVentanaEmergente()">PAGAR</button>
+    <script>
+      function abrirVentanaEmergente() {
+        // URL de la página HTML con el escáner QR
+        var urlVentanaEmergente = "escanearQR.html";
+    
+        // Abre una nueva ventana o pestaña con el escáner QR
+        window.open(urlVentanaEmergente, "_blank", "width=500,height=500");
+      }
+    </script>
+    
+
+    <button class="btnMain" id="btnCobrar">COBRAR</button>
+    <!-----------BOTÓN PARA IR A VENTANA COBRAR------------>
+    <script>
+      // Obtener el botón de registro
+      var btnCobrar = document.getElementById("btnCobrar");
+      // Agregar un evento de click al botón de registro
+      btnCobrar.addEventListener("click", function () {
+        // Redirigir al usuario a la página de registro
+        window.location.href = "cobrar.html";
+      });
+    </script>
+
+  </div>
+  <div class="containerDos">
+    <button onclick="">MOVIMIENTOS</button>
+
+    <button id="addCard">AÑADIR TARJETAS</button>
+    <script>
+      // Obtener el botón de registro
+      var addCard = document.getElementById("addCard");
+      // Agregar un evento de click al botón de registro
+      addCard.addEventListener("click", function () {
+        // Redirigir al usuario a la página de registro
+        window.location.href = "addCard.html";
+      });
+    </script>
+
+    <button onclick="">TARJETAS VINCULADAS</button>
+
+
+  </div>
+
+  <div class="containerTres">
+    <button id="btnCerrar" class="cs"><span class="material-symbols-outlined">logout</span><br>Cerrar Sesión</button>
+    <!-----------BOTÓN PARA CERRAR SESIÓN------------>
+    <script>
+      // Obtener el botón de registro
+      var btnCerrar = document.getElementById("btnCerrar");
+      // Agregar un evento de click al botón de registro
+      btnCerrar.addEventListener("click", function () {
+        // Redirigir al usuario a la página de registro
+        window.location.href = "index.html";
+      });
+    </script>
+
+    <button class="cs"><span class="material-symbols-outlined">account_circle</span><br>Opciones</button>
+  </div>
+
+
+  
+
+</body>
+
+
+
+</html>
