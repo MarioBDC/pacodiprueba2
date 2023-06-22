@@ -1,79 +1,48 @@
+<!DOCTYPE html>
 <html>
-
 <head>
     <title>Html-Qrcode Demo</title>
-
-<body>
-    <div id="qr-reader" style="width:500px"></div>
-    <div id="qr-reader-results"></div>
-</body>
-<style>
-    html,
-    body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-    }
-
-    #qr-reader {
-        max-width: 500px;
-        margin: 0 auto;
-        padding: 20px;
-        box-sizing: border-box;
-    }
-
-    #qr-reader-results {
-        max-width: 500px;
-        margin: 20px auto;
-        padding: 20px;
-        box-sizing: border-box;
-        border: 1px solid #ccc;
-        text-align: center;
-    }
-
-    @media screen and (max-width: 767px) {
-        #qr-reader {
-            max-width: 100%;
-            padding: 10px;
-        }
-
-        #qr-reader-results {
-            max-width: 100%;
-            margin: 10px auto;
-            padding: 10px;
-        }
-    }
-</style>
-<script src="js/html5-qrcode.min.js"></script>
-<script>
-    function docReady(fn) {
-        // see if DOM is already available
-        if (document.readyState === "complete"
-            || document.readyState === "interactive") {
-            // call on next available tick
-            setTimeout(fn, 1);
-        } else {
-            document.addEventListener("DOMContentLoaded", fn);
-        }
-    }
-
-    docReady(function () {
-        var resultContainer = document.getElementById('qr-reader-results');
-        var lastResult, countResults = 0;
-        function onScanSuccess(decodedText, decodedResult) {
-            if (decodedText !== lastResult) {
-                ++countResults;
-                lastResult = decodedText;
-                // Handle on success condition with the decoded message.
-                console.log(`Scan result ${decodedText}`, decodedResult);
-            }
-        }
-
-        var html5QrcodeScanner = new Html5QrcodeScanner(
-            "qr-reader", { fps: 10, qrbox: 250 });
-        html5QrcodeScanner.render(onScanSuccess);
-    });
-</script>
-
-<!--https://github.com/mebjas/html5-qrcode/blob/master/examples/html5/index.html-->
 </head>
+<body>
+    <video id="qr-video" width="100%" height="auto"></video>
+    <div id="qr-reader-results"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/jsqr/dist/jsQR.js"></script>
+    <script>
+        function startScanner() {
+            navigator.mediaDevices.getUserMedia({ video: { facingMode: 'environment' } })
+                .then(function(stream) {
+                    var videoElement = document.getElementById('qr-video');
+                    videoElement.srcObject = stream;
+                    videoElement.play();
+
+                    var canvas = document.createElement('canvas');
+                    var canvasContext = canvas.getContext('2d');
+
+                    function scanQRCode() {
+                        canvas.width = videoElement.videoWidth;
+                        canvas.height = videoElement.videoHeight;
+                        canvasContext.drawImage(videoElement, 0, 0, canvas.width, canvas.height);
+
+                        var imageData = canvasContext.getImageData(0, 0, canvas.width, canvas.height);
+                        var code = jsQR(imageData.data, imageData.width, imageData.height);
+
+                        if (code) {
+                            console.log('QR Code:', code.data);
+                            // Aquí puedes realizar la acción correspondiente al escanear el código QR
+                        }
+
+                        requestAnimationFrame(scanQRCode);
+                    }
+
+                    scanQRCode();
+                })
+                .catch(function(error) {
+                    console.error('Error accessing camera:', error);
+                });
+        }
+
+        document.addEventListener("DOMContentLoaded", startScanner);
+    </script>
+</body>
+</html>
