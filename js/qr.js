@@ -29,7 +29,7 @@ function generarQR() {
     var datosEscaneados = JSON.parse(qrcode._oDrawing._el.lastChild.data);
 
     // Genera la URL con los datos del pago
-    var url = "datosPago.html?producto=" + encodeURIComponent(datosEscaneados.producto) + "&precio=" + encodeURIComponent(datosEscaneados.precio);
+    var url = "pacodiprueba2/datosPago.html?producto=" + encodeURIComponent(datosEscaneados.producto) + "&precio=" + encodeURIComponent(datosEscaneados.precio);
 
     // Redirige a la página datosPago.html con los parámetros en la URL
     window.location.href = url;
