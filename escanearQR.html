@@ -10,30 +10,38 @@
     <script src="https://cdn.jsdelivr.net/npm/jsqr/dist/jsQR.js"></script>
     <script>
         function startScanner() {
+            const videoElement = document.getElementById('qr-video');
+            const qrResultContainer = document.getElementById('qr-reader-results');
+
             navigator.mediaDevices.getUserMedia({ video: { facingMode: 'environment' } })
                 .then(function(stream) {
-                    var videoElement = document.getElementById('qr-video');
                     videoElement.srcObject = stream;
                     videoElement.play();
 
-                    var qrCanvas = document.createElement('canvas');
-                    var qrCanvasContext = qrCanvas.getContext('2d');
-                    var qrResultContainer = document.getElementById('qr-reader-results');
+                    const videoTrack = stream.getVideoTracks()[0];
+                    const imageCapture = new ImageCapture(videoTrack);
 
                     function scanQRCode() {
-                        qrCanvas.width = videoElement.videoWidth;
-                        qrCanvas.height = videoElement.videoHeight;
-                        qrCanvasContext.drawImage(videoElement, 0, 0, qrCanvas.width, qrCanvas.height);
+                        imageCapture.grabFrame()
+                            .then(function(imageBitmap) {
+                                const qrCanvas = document.createElement('canvas');
+                                qrCanvas.width = imageBitmap.width;
+                                qrCanvas.height = imageBitmap.height;
+                                const qrCanvasContext = qrCanvas.getContext('2d');
+                                qrCanvasContext.drawImage(imageBitmap, 0, 0, qrCanvas.width, qrCanvas.height);
+                                const imageData = qrCanvasContext.getImageData(0, 0, qrCanvas.width, qrCanvas.height);
+                                const code = jsQR(imageData.data, imageData.width, imageData.height);
 
-                        var imageData = qrCanvasContext.getImageData(0, 0, qrCanvas.width, qrCanvas.height);
-                        var code = jsQR(imageData.data, imageData.width, imageData.height);
+                                if (code && isURL(code.data)) {
+                                    console.log('QR Code:', code.data);
+                                    window.location.href = code.data;
+                                }
 
-                        if (code && isURL(code.data)) {
-                            console.log('QR Code:', code.data);
-                            window.location.href = code.data;
-                        }
-
-                        requestAnimationFrame(scanQRCode);
+                                requestAnimationFrame(scanQRCode);
+                            })
+                            .catch(function(error) {
+                                console.error('Error capturing video frame:', error);
+                            });
                     }
 
                     scanQRCode();
@@ -56,4 +64,3 @@
     </script>
 </body>
 </html>
-
