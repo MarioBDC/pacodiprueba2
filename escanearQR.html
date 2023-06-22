@@ -1,55 +1,44 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Html-Qrcode Demo</title>
+    <title>QR Scanner</title>
+    <style>
+        #preview {
+            width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        #result {
+            text-align: center;
+            font-size: 18px;
+        }
+    </style>
 </head>
 <body>
-    <video id="qr-video" width="100%" height="auto"></video>
-    <div id="qr-reader-results"></div>
+    <video id="preview"></video>
+    <div id="result"></div>
 
-    <script src="https://cdn.jsdelivr.net/npm/jsqr/dist/jsQR.js"></script>
+    <script src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
     <script>
-        function startScanner() {
-            const videoElement = document.getElementById('qr-video');
-            const qrResultContainer = document.getElementById('qr-reader-results');
+        let scanner = new Instascan.Scanner({ video: document.getElementById('preview') });
 
-            navigator.mediaDevices.getUserMedia({ video: { facingMode: 'environment' } })
-                .then(function(stream) {
-                    videoElement.srcObject = stream;
-                    videoElement.play();
+        scanner.addListener('scan', function(content) {
+            // Comprobar si el contenido del QR es una URL
+            if (isURL(content)) {
+                window.location.href = content;
+            }
+        });
 
-                    const videoTrack = stream.getVideoTracks()[0];
-                    const imageCapture = new ImageCapture(videoTrack);
-
-                    function scanQRCode() {
-                        imageCapture.grabFrame()
-                            .then(function(imageBitmap) {
-                                const qrCanvas = document.createElement('canvas');
-                                qrCanvas.width = imageBitmap.width;
-                                qrCanvas.height = imageBitmap.height;
-                                const qrCanvasContext = qrCanvas.getContext('2d');
-                                qrCanvasContext.drawImage(imageBitmap, 0, 0, qrCanvas.width, qrCanvas.height);
-                                const imageData = qrCanvasContext.getImageData(0, 0, qrCanvas.width, qrCanvas.height);
-                                const code = jsQR(imageData.data, imageData.width, imageData.height);
-
-                                if (code && isURL(code.data)) {
-                                    console.log('QR Code:', code.data);
-                                    window.location.href = code.data;
-                                }
-
-                                requestAnimationFrame(scanQRCode);
-                            })
-                            .catch(function(error) {
-                                console.error('Error capturing video frame:', error);
-                            });
-                    }
-
-                    scanQRCode();
-                })
-                .catch(function(error) {
-                    console.error('Error accessing camera:', error);
-                });
-        }
+        Instascan.Camera.getCameras().then(function(cameras) {
+            if (cameras.length > 0) {
+                scanner.start(cameras[0]);
+            } else {
+                console.error('No se encontraron cámaras en el dispositivo.');
+            }
+        }).catch(function(error) {
+            console.error('Error al acceder a las cámaras:', error);
+        });
 
         function isURL(text) {
             try {
@@ -59,8 +48,7 @@
                 return false;
             }
         }
-
-        document.addEventListener("DOMContentLoaded", startScanner);
     </script>
 </body>
 </html>
+
