@@ -1,55 +1,43 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>QR Scanner</title>
-    <style>
-        #preview {
-            width: 100%;
-            height: auto;
-            margin-bottom: 10px;
-        }
-
-        #result {
-            text-align: center;
-            font-size: 18px;
-        }
-    </style>
+    <link rel="stylesheet" href="css/escanearQR.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--FUENTES DE LETRA-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mitr&display=swap" rel="stylesheet">
+    <!--ICONOS-->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
+
 <body>
-    <video id="preview"></video>
+    <div><button class="navBefore" id="btnNavBefore"><span class="material-symbols-outlined">navigate_before</span></button>
+    </div><!-----------BOTÓN PARA IR A VENTANA COBRAR------------>
+    <script>
+        // Obtener el botón de registro
+        var btnNavBefore = document.getElementById("btnNavBefore");
+        // Agregar un evento de click al botón de registro
+        btnNavBefore.addEventListener("click", function () {
+            // Redirigir al usuario a la página de registro
+            window.location.href = "principal.html";
+        });
+    </script>
+    <div>
+        <h1>Escanea el QR</h1>
+    </div>
+    <div>
+        <video id="preview"></video>
+    </div>
     <div id="result"></div>
 
     <script src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
-    <script>
-        let scanner = new Instascan.Scanner({ video: document.getElementById('preview') });
-
-        scanner.addListener('scan', function(content) {
-            // Comprobar si el contenido del QR es una URL
-            if (isURL(content)) {
-                window.location.href = content;
-            }
-        });
-
-        Instascan.Camera.getCameras().then(function(cameras) {
-            if (cameras.length > 0) {
-                scanner.start(cameras[0]);
-            } else {
-                console.error('No se encontraron cámaras en el dispositivo.');
-            }
-        }).catch(function(error) {
-            console.error('Error al acceder a las cámaras:', error);
-        });
-
-        function isURL(text) {
-            try {
-                new URL(text);
-                return true;
-            } catch (_) {
-                return false;
-            }
-        }
-    </script>
+    <script src="js/escanerQR.js"></script>
 </body>
+
 </html>
 
 
