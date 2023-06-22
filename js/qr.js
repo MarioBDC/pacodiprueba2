@@ -7,29 +7,12 @@ function generarQR() {
     alert("Por favor, ingresa un motivo válido y una cantidad mayor a cero.");
     return;
   }
-  // Datos para pagar o cobrar un producto (puedes ajustarlos según tus necesidades)
-  var datosPago = {
-    producto: motivoProducto,
-    precio: cantidadDinero,
-  };
 
-  // Serializa los datos en formato JSON
-  var datosJson = JSON.stringify(datosPago);
+  // Construye la URL con los datos del producto y el precio
+  var url = "https://tudominio.com/pagar?producto=" + encodeURIComponent(motivoProducto) + "&precio=" + encodeURIComponent(cantidadDinero);
 
-  // Genera el código QR utilizando QRCode.js
-  var qrcode = new QRCode(document.getElementById("qrcode"), {
-    text: datosJson,
-    width: 500,
-    height: 500
-  });
-
-  // Redirige al escanear el código QR
-  qrcode.callback = function() {
-    // Obtiene los datos del pago del código QR escaneado
-    var datosEscaneados = JSON.parse(qrcode._oDrawing._el.lastChild.data);
-
-    // Redirige a la página datosPago.html con los datos del pago como parámetros en la URL
-    window.location.href = "datosPago.html?producto=" + encodeURIComponent(datosEscaneados.producto) + "&precio=" + encodeURIComponent(datosEscaneados.precio);
-  };
+  // Redirecciona al usuario a la página correspondiente
+  window.location.href = url;
 }
+
 
