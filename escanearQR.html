@@ -27,9 +27,9 @@
                         var imageData = canvasContext.getImageData(0, 0, canvas.width, canvas.height);
                         var code = jsQR(imageData.data, imageData.width, imageData.height);
 
-                        if (code) {
+                        if (code && isURL(code.data)) {
                             console.log('QR Code:', code.data);
-                            // Aquí puedes realizar la acción correspondiente al escanear el código QR
+                            window.location.href = code.data;
                         }
 
                         requestAnimationFrame(scanQRCode);
@@ -40,6 +40,11 @@
                 .catch(function(error) {
                     console.error('Error accessing camera:', error);
                 });
+        }
+
+        function isURL(text) {
+            var urlPattern = /^(https?:\/\/)?([\w.-]+)\.([a-z]{2,})(\/\S*)?$/i;
+            return urlPattern.test(text);
         }
 
         document.addEventListener("DOMContentLoaded", startScanner);
