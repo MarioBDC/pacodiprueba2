@@ -11,8 +11,12 @@ function generarQR() {
   // Construye la URL con los datos del producto y el precio
   var url = "https://mariobdc.github.io/pacodiprueba2/datosPago.html?producto=" + encodeURIComponent(motivoProducto) + "&precio=" + encodeURIComponent(cantidadDinero);
 
-  // Redirecciona al usuario a la página correspondiente
-  //window.location.href = url;
+  // Genera el código QR utilizando QRCode.js
+  var qrcode = new QRCode(document.getElementById("qrcode"), {
+    text: url,
+    width: 500,
+    height: 500
+  });
 }
 
 
