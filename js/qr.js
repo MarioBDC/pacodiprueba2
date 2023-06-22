@@ -12,7 +12,7 @@ function generarQR() {
   var url = "https://mariobdc.github.io/pacodiprueba2/datosPago.html?producto=" + encodeURIComponent(motivoProducto) + "&precio=" + encodeURIComponent(cantidadDinero);
 
   // Redirecciona al usuario a la página correspondiente
-  window.location.href = url;
+  //window.location.href = url;
 }
 
 
