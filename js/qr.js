@@ -9,7 +9,7 @@ function generarQR() {
   }
 
   // Construye la URL con los datos del producto y el precio
-  var url = "https://tudominio.com/pagar?producto=" + encodeURIComponent(motivoProducto) + "&precio=" + encodeURIComponent(cantidadDinero);
+  var url = "https://mariobdc.github.io/pacodiprueba2/datosPago.html?producto=" + encodeURIComponent(motivoProducto) + "&precio=" + encodeURIComponent(cantidadDinero);
 
   // Redirecciona al usuario a la página correspondiente
   window.location.href = url;
