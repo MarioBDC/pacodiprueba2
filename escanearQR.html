@@ -21,23 +21,31 @@
 
     <script src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
     <script>
-        let scanner = new Instascan.Scanner({ video: document.getElementById('preview') });
+        let scanner;
 
-        scanner.addListener('scan', function(content) {
+        Instascan.Camera.getCameras().then(function (cameras) {
+            if (cameras.length > 0) {
+                // Buscar la cámara trasera y usarla
+                let rearCamera = cameras.find(camera => camera.name.toLowerCase().includes('back'));
+                scanner = new Instascan.Scanner({ video: document.getElementById('preview'), mirror: false });
+
+                if (rearCamera) {
+                    scanner.start(rearCamera);
+                } else {
+                    console.error('No se encontró una cámara trasera.');
+                }
+            } else {
+                console.error('No se encontraron cámaras en el dispositivo.');
+            }
+        }).catch(function (error) {
+            console.error('Error al acceder a las cámaras:', error);
+        });
+
+        scanner.addListener('scan', function (content) {
             // Comprobar si el contenido del QR es una URL
             if (isURL(content)) {
                 window.location.href = content;
             }
-        });
-
-        Instascan.Camera.getCameras().then(function(cameras) {
-            if (cameras.length > 0) {
-                scanner.start(cameras[0]);
-            } else {
-                console.error('No se encontraron cámaras en el dispositivo.');
-            }
-        }).catch(function(error) {
-            console.error('Error al acceder a las cámaras:', error);
         });
 
         function isURL(text) {
@@ -51,4 +59,5 @@
     </script>
 </body>
 </html>
+
 
