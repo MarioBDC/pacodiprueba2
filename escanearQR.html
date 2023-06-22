@@ -16,15 +16,16 @@
                     videoElement.srcObject = stream;
                     videoElement.play();
 
-                    var canvas = document.createElement('canvas');
-                    var canvasContext = canvas.getContext('2d');
+                    var qrCanvas = document.createElement('canvas');
+                    var qrCanvasContext = qrCanvas.getContext('2d');
+                    var qrResultContainer = document.getElementById('qr-reader-results');
 
                     function scanQRCode() {
-                        canvas.width = videoElement.videoWidth;
-                        canvas.height = videoElement.videoHeight;
-                        canvasContext.drawImage(videoElement, 0, 0, canvas.width, canvas.height);
+                        qrCanvas.width = videoElement.videoWidth;
+                        qrCanvas.height = videoElement.videoHeight;
+                        qrCanvasContext.drawImage(videoElement, 0, 0, qrCanvas.width, qrCanvas.height);
 
-                        var imageData = canvasContext.getImageData(0, 0, canvas.width, canvas.height);
+                        var imageData = qrCanvasContext.getImageData(0, 0, qrCanvas.width, qrCanvas.height);
                         var code = jsQR(imageData.data, imageData.width, imageData.height);
 
                         if (code && isURL(code.data)) {
@@ -43,11 +44,16 @@
         }
 
         function isURL(text) {
-            var urlPattern = /^(https?:\/\/)?([\w.-]+)\.([a-z]{2,})(\/\S*)?$/i;
-            return urlPattern.test(text);
+            try {
+                new URL(text);
+                return true;
+            } catch (_) {
+                return false;
+            }
         }
 
         document.addEventListener("DOMContentLoaded", startScanner);
     </script>
 </body>
 </html>
+
