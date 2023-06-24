@@ -7,7 +7,6 @@ body {
 }
 
 div {
-  /*background-image: url("img/fondoregistro.png");*/
   border: 1px solid #ccc;
   border-radius: 30px;
   padding: 4px;
@@ -17,10 +16,6 @@ div {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.qr{
-  justify-content: center;
-}
-
 img {
   max-width: 100%;
   height: auto;
@@ -28,10 +23,9 @@ img {
   margin: 0 auto;
 }
 
-button {
+.btnMain{
   font-size: 1.7rem;
   font-weight: bold;
-  /*text-transform: uppercase;*/
   letter-spacing: 0em;
   margin-right: 1rem;
   margin-left: 1rem;
@@ -42,11 +36,28 @@ button {
   width: 95%;
   height: 100px;
   border-radius: 1.3rem;
-  background-color: #73cfb2;
+  
   color: #333;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
   transition: all 0.2s ease-in-out;
   cursor: pointer;
+}
+
+#btnCobrar{
+  background-color: #e27b7b;
+}
+#btnPagar{
+  background-color: aqua;
+}
+
+.btnMain:hover {
+  background-color: #2eb096;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
+}
+
+.btnMain:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
 }
 
 input[type="number"],
@@ -71,35 +82,24 @@ input[type="text"] {
   margin-bottom: .5rem;
 }
 
-button:hover {
-  background-color: #2eb096;
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
-}
 
-button:focus {
-  outline: none;
-  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
-}
 
 .container {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* También puedes establecer una altura y ancho para el contenedor */
 }
 
 .containerDos {
   display: block;
   justify-content: center;
   align-items: center;
-  /* También puedes establecer una altura y ancho para el contenedor */
 }
 
 .containerTres {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* También puedes establecer una altura y ancho para el contenedor */
 }
 .navBefore, .navBefore:hover{
   justify-content: right;
@@ -123,9 +123,90 @@ button:focus {
     'opsz' 48
 }
 
+  /* Estilos para el menú de navegación */
+    .menu {
+      position: relative;
+      display: flex;
+    }
+
+    .menu-btn {
+      background-color: transparent;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .menu-list {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: transparent;
+      border-radius: 20px;
+      padding: 0;
+      list-style: none;
+      margin: 0;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .menu-list li {
+      padding: 10px;
+    }
+
+    .menu-list li:hover {
+      background-color: transparent;
+    }
+
+    .menu-list .option {
+      background-color: rgb(31, 77, 163);
+
+    }
+
+    .option {
+      border: none;
+      cursor: pointer;
+      font-size: 20px;
+      padding: 5px 10px;
+      width: 100%;
+      text-align: left;
+      color: #fff;
+    }
+
+    .cerrarSesion {
+      border: none;
+      cursor: pointer;
+      font-size: 20px;
+      padding: 5px 10px;
+      width: 100%;
+      text-align: left;
+    }
+
+    .menu-list .cerrarSesion {
+      background-color: #f44336;
+      color: #fff;
+    }
+
+    .menu-list .cerrarSesion:hover {
+      background-color: #d32f2f;
+    }
+
+    .option,
+    .cerrarSesion {
+      border-radius: 15px;
+    }
+
+    @media screen and (max-width: 768px) {
+      .menu-list {
+        top: 100%;
+        bottom: 100%;
+        background-color: rgb(32, 32, 187);
+      }
+
+    }
+
 
 @media (max-width: 354px) {
-  button {
+  .btnMain {
     padding: 0.5rem 0.5rem;
     border-radius: 1rem;
     height: 100px;
@@ -145,7 +226,6 @@ button:focus {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* También puedes establecer una altura y ancho para el contenedor */
   }
 
   .containerTres {
@@ -156,7 +236,7 @@ button:focus {
     width: 50% auto;
   }
 
-  button {
+  .btnMain {
     font-size: .2rem;
     border-radius: 1rem;
     width: 90%;
@@ -169,18 +249,15 @@ button:focus {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* También puedes establecer una altura y ancho para el contenedor */
   }
 
   .containerDos {
     display: block;
     justify-content: center;
     align-items: center;
-    /* También puedes establecer una altura y ancho para el contenedor */
   }
 
   div {
-    /*background-image: url("img/fondoregistro.png");*/
     border: 1px solid #ccc;
     border-radius: 30px;
     padding: 4px;
@@ -202,7 +279,7 @@ button:focus {
     margin-left: auto;
   }
 
-  button {
+  .btnMain {
     font-size: 1.1rem;
     padding: 0.8rem 1.6rem;
     border-radius: 1.3rem;
