@@ -11,45 +11,37 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Mitr&display=swap" rel="stylesheet">
     <!--ICONOS-->
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
 </head>
 
 <body>
-    <button class="navBefore" id="btnNavBefore"><span class="material-symbols-outlined">navigate_before</span></button>
+    <button class="navBefore" id="btnNavBefore"><span class="material-symbols-outlined">arrow_back_ios</span></button>
     <!-----------BOTÓN PARA IR A VENTANA COBRAR------------>
     <script>
-        // Obtener el botón de registro
-        var btnNavBefore = document.getElementById("btnNavBefore");
-        // Agregar un evento de click al botón de registro
-        btnNavBefore.addEventListener("click", function () {
-            // Redirigir al usuario a la página de registro
-            window.location.href = "principal.html";
+        var btnNavBefore = document.getElementById("btnNavBefore");// Obtener el botón de registro
+        btnNavBefore.addEventListener("click", function () {// Agregar un evento de click al botón de registro
+            window.location.href = "principal.html";// Redirigir al usuario a la página de registro
         });
     </script>
-    <div>
 
+    <div>
         <img src="img/Cobrar300x100.png" alt="COBRAR">
     </div>
 
     <div>
-        <h1>Monto a Cobrar</h1>
-        <input type="number" id="cantidad" name="cantidad" placeholder="Ingresar cantidad" maxlength="4">
-    
         <h1>Motivo:</h1>
         <input type="text" id="motivo" name="motivo" placeholder="Motivo del cobro">
-        <br>
+        
+        <h1>Monto a Cobrar</h1>
+        <input type="number" id="cantidad" name="cantidad" placeholder="Ingresar cantidad" maxlength="4"><br><br><br><br>
     
-        <button onclick="generarQR()">Aceptar</button>
+        <button class="aceptar" onclick="generarQR()">Aceptar</button>
         <h1>Escanea</h1>
         <div class="qr" id="qrcode"></div>
     </div>
-    
-
 </body>
 <script src="js/qr.js"></script>
 <script src="js/qrcode.min.js"></script>
-
-
 
 </html>
