@@ -14,8 +14,8 @@ function generarQR() {
   // Genera el código QR utilizando QRCode.js
   var qrcode = new QRCode(document.getElementById("qrcode"), {
     text: url,
-    width: 900,
-    height: 900
+    width: 800,
+    height: 800
   });
 }
 
