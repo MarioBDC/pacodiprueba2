@@ -17,21 +17,59 @@
 </head>
 
 <body>
+  <!-----------Menú y Logotipo------------>
+  <div class="menu">
+    <button class="menu-btn" onclick="toggleMenu()"><span class="material-symbols-outlined">menu</span></button>
+    <ul class="menu-list">
+      <li><button class="option" id="addCard">Registrar Tarjetas</button></li>
+      <script>
+        // Obtener el botón de registro
+        var addCard = document.getElementById("addCard");
+        // Agregar un evento de click al botón de registro
+        addCard.addEventListener("click", function () {
+          // Redirigir al usuario a la página de registro
+          window.location.href = "addCard.html";
+        });
+      </script>
+      <li><button class="option" id="cardAdds">Visualizar Tarjetas</button></li>
+      <script>
+        // Obtener el botón de registro
+        var cardAdds = document.getElementById("cardAdds");
+        // Agregar un evento de click al botón de registro
+        cardAdds.addEventListener("click", function () {
+          // Redirigir al usuario a la página de registro
+          window.location.href = "php/obtener_tarjetas.php";
+        });
+      </script>
+      <li><button class="option"><span class="material-symbols-outlined">account_circle</span> Perfil</button></li>
+      <li><button class="cerrarSesion" id="btnCerrar"><span class="material-symbols-outlined">logout</span>  Cerrar Sesión</button></li>
+      <script>
+        // Obtener el botón de registro
+        var btnCerrar = document.getElementById("btnCerrar");
+        // Agregar un evento de click al botón de registro
+        btnCerrar.addEventListener("click", function () {
+          // Redirigir al usuario a la página de registro
+          window.location.href = "index.html";
+        });
+      </script>
+    </ul>
+  </div>
+
   <div>
     <img src="img/Logo2300x100.png" alt="paga y cobra con PACO">
-  </div>
+  </div><br>
+
+<!------------------------BOTONES PRINCIPALES--------------------->
   <div class="container">
     <button class="btnMain" id="btnPagar" onclick="abrirVentanaEmergente()">PAGAR</button>
     <script>
-      // Obtener el botón de registro
-      var btnPagar = document.getElementById("btnPagar");
-      // Agregar un evento de click al botón de registro
-      btnPagar.addEventListener("click", function () {
-        // Redirigir al usuario a la página de registro
-        window.location.href = "escanearQR.html";
-      });
+      function abrirVentanaEmergente() {
+        // URL de la página HTML con el escáner QR
+        var urlVentanaEmergente = "escanearQR.html";
+        // Abre una nueva ventana o pestaña con el escáner QR
+        window.open(urlVentanaEmergente, "_blank", "width=500,height=500");
+      }
     </script>
-    
 
     <button class="btnMain" id="btnCobrar">COBRAR</button>
     <!-----------BOTÓN PARA IR A VENTANA COBRAR------------>
@@ -44,43 +82,10 @@
         window.location.href = "cobrar.html";
       });
     </script>
-
-  </div><br><br><br><br><br><br><br><br><br>
-  <!--<div class="containerDos">
-    <button onclick="">MOVIMIENTOS</button>
-
-    <button id="addCard">AÑADIR TARJETAS</button>
-    <script>
-      // Obtener el botón de registro
-      var addCard = document.getElementById("addCard");
-      // Agregar un evento de click al botón de registro
-      addCard.addEventListener("click", function () {
-        // Redirigir al usuario a la página de registro
-        window.location.href = "addCard.html";
-      });
-    </script>
-
-    <button onclick="">TARJETAS VINCULADAS</button>
-  </div>-->
-
-  <div class="containerTres">
-    <button id="btnCerrar" class="cs"><span class="material-symbols-outlined">logout</span><br>Cerrar Sesión</button>
-    <!-----------BOTÓN PARA CERRAR SESIÓN------------>
-    <script>
-      // Obtener el botón de registro
-      var btnCerrar = document.getElementById("btnCerrar");
-      // Agregar un evento de click al botón de registro
-      btnCerrar.addEventListener("click", function () {
-        // Redirigir al usuario a la página de registro
-        window.location.href = "index.html";
-      });
-    </script>
-
-    <button class="cs"><span class="material-symbols-outlined">account_circle</span><br>Opciones</button>
   </div>
 
+
 </body>
-
-
+<script src="js/desplegarMenu.js"></script>
 
 </html>
