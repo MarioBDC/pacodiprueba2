@@ -24,7 +24,7 @@ img {
 }
 
 .btnMain {
-  font-size: 1.7rem;
+  font-size: 2.5rem;
   font-weight: bold;
   letter-spacing: 0em;
   margin-right: 1rem;
@@ -187,6 +187,7 @@ input[type="text"] {
 .option,
 .cerrarSesion {
   border-radius: 15px;
+  height: 45px;
 }
 
 @media screen and (max-width: 768px) {
@@ -240,12 +241,6 @@ input[type="text"] {
 
 @media (max-width: 559px) {
   .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .containerDos {
     display: block;
     justify-content: center;
     align-items: center;
@@ -274,11 +269,11 @@ input[type="text"] {
   }
 
   .btnMain {
-    font-size: 1.1rem;
+    font-size: 2.5rem;
     padding: 0.8rem 1.6rem;
     border-radius: 1.3rem;
     width: 90%;
-    height: 60px;
+    height: 100px;
   }
 
   .cs {
