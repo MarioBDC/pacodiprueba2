@@ -3,7 +3,7 @@
   "short_name": "PACO",
   "description": "Bienvenid@s a PACO donde podrá realizar cobros y pagos de una manera fácil.",
   "background_color": "#fffff",
-  "theme_color": "#a5bfed",
+  "theme_color": "#282828",
   "orientation": "portrait",
   "display": "standalone",
   "start_url": "./?utm_source=web_app_manifest",
