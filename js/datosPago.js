@@ -10,5 +10,5 @@ document.getElementById("precio").textContent = precio;
 // Función para mostrar el mensaje de pago exitoso
 function pagoExitoso() {
   // Abre la ventana de pago exitoso
-  window.open("pagoExitoso.html", "_blank");
+  window.location.href = "pagoExitoso.html";
 }
