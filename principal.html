@@ -5,8 +5,8 @@
   <title>paga y cobra con PACO</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!--ESTILOS CSS -->
-  <link rel="preload" href="css/Index.css" as="style">
-  <link rel="stylesheet" href="css/Index.css">
+  <link rel="preload" href="css/principal.css" as="style">
+  <link rel="stylesheet" href="css/principal.css">
   <!--FUENTES DE LETRA-->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,71 +17,28 @@
 </head>
 
 <body>
-  <!-----------Menú y Logotipo------------>
+<!---------------------Menú---------------------->
   <div class="menu">
     <button class="menu-btn" onclick="toggleMenu()"><span class="material-symbols-outlined">menu</span></button>
     <ul class="menu-list">
       <li><button class="option" id="addCard">Registrar Tarjetas</button></li>
-      <script>
-        // Obtener el botón de registro
-        var addCard = document.getElementById("addCard");
-        // Agregar un evento de click al botón de registro
-        addCard.addEventListener("click", function () {
-          // Redirigir al usuario a la página de registro
-          window.location.href = "addCard.html";
-        });
-      </script>
+
       <li><button class="option" id="cardAdds">Visualizar Tarjetas</button></li>
-      <script>
-        // Obtener el botón de registro
-        var cardAdds = document.getElementById("cardAdds");
-        // Agregar un evento de click al botón de registro
-        cardAdds.addEventListener("click", function () {
-          // Redirigir al usuario a la página de registro
-          window.location.href = "php/obtener_tarjetas.php";
-        });
-      </script>
+      
       <li><button class="option"><span class="material-symbols-outlined">account_circle</span> Perfil</button></li>
+
       <li><button class="cerrarSesion" id="btnCerrar"><span class="material-symbols-outlined">logout</span>  Cerrar Sesión</button></li>
-      <script>
-        // Obtener el botón de registro
-        var btnCerrar = document.getElementById("btnCerrar");
-        // Agregar un evento de click al botón de registro
-        btnCerrar.addEventListener("click", function () {
-          // Redirigir al usuario a la página de registro
-          window.location.href = "index.html";
-        });
-      </script>
     </ul>
   </div>
-
+<!---------------------Logo---------------------->
   <div>
     <img src="img/Logo2300x100.png" alt="paga y cobra con PACO">
-  </div><br>
+  </div>
 
 <!------------------------BOTONES PRINCIPALES--------------------->
   <div class="container">
-    <button class="btnMain" id="btnPagar" onclick="abrirVentanaEmergente()">PAGAR</button>
-    <script>
-      function abrirVentanaEmergente() {
-        // URL de la página HTML con el escáner QR
-        var urlVentanaEmergente = "escanearQR.html";
-        // Abre una nueva ventana o pestaña con el escáner QR
-        window.open(urlVentanaEmergente, "_blank", "width=500,height=500");
-      }
-    </script>
-
+    <button class="btnMain" id="btnPagar">PAGAR</button>
     <button class="btnMain" id="btnCobrar">COBRAR</button>
-    <!-----------BOTÓN PARA IR A VENTANA COBRAR------------>
-    <script>
-      // Obtener el botón de registro
-      var btnCobrar = document.getElementById("btnCobrar");
-      // Agregar un evento de click al botón de registro
-      btnCobrar.addEventListener("click", function () {
-        // Redirigir al usuario a la página de registro
-        window.location.href = "cobrar.html";
-      });
-    </script>
   </div>
 
   <div>
@@ -92,6 +49,6 @@
   </div>
 
 </body>
-<script src="js/desplegarMenu.js"></script>
+<script src="js/principal.js"></script>
 
 </html>
