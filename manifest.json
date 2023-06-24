@@ -1,8 +1,8 @@
 {
-  "name": "pacodi",
-  "short_name": "pacodi",
-  "description": "Bienvenid@s a pacodi donde podrá realizar cobros y pagos de una manera fácil.",
-  "background_color": "#2B2B2B",
+  "name": "PACO",
+  "short_name": "PACO",
+  "description": "Bienvenid@s a PACO donde podrá realizar cobros y pagos de una manera fácil.",
+  "background_color": "#fffff",
   "theme_color": "#a5bfed",
   "orientation": "portrait",
   "display": "standalone",
