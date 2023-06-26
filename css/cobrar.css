@@ -33,14 +33,19 @@ button {
 input[type="number"],
 input[type="text"] {
   padding: 10px;
-  border: none;
-  border-radius: 5px;
-  border-color: #8cc2ee;
+  border: 1px solid #ccc;
+  border-radius: 7px;
+  border-color: #000000;
   justify-content: center;
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
   width: 90%;
   margin-left: 20px;
   background-color: rgb(195, 220, 230);
+  
+}
+
+input:focus {
+  border-color: blue;
 }
 
 input[type="number"] {
