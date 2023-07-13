@@ -2,15 +2,18 @@
 var params = new URLSearchParams(window.location.search);
 var producto = params.get("producto");
 var precio = params.get("precio");
+var nombre = params.get("nombre");
 
 // Actualiza los elementos HTML con los datos del pago
 document.getElementById("producto").textContent = producto;
 document.getElementById("precio").textContent = precio;
+document.getElementById("nombre").textContent = nombre;
 
-// Función para mostrar el mensaje de pago exitoso
+// Función para seleccionar tarjeta
 var datosPago = document.getElementById("datosPago");
 // Agregar un evento de click al botón de registro
 datosPago.addEventListener("click", function () {
-  // Redirigir al usuario a la página de registro
-  window.location.href = "SelecCard.html";
+  
+  window.location.href = "Capturas/Capturas.html";
 });
+
