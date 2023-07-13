@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <title>COBRAR</title>
     <!--ESTILOS CSS -->
@@ -11,31 +10,25 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Mitr&display=swap" rel="stylesheet">
     <!--ICONOS-->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+
+                                Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+
+                                Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
 </head>
 
 <body>
     <button class="navBefore" id="btnNavBefore"><span class="material-symbols-outlined">arrow_back_ios</span></button>
-    <!-----------BOTÓN PARA IR A VENTANA COBRAR------------>
-    <script>
-        var btnNavBefore = document.getElementById("btnNavBefore");// Obtener el botón de registro
-        btnNavBefore.addEventListener("click", function () {// Agregar un evento de click al botón de registro
-            window.location.href = "principal.html";// Redirigir al usuario a la página de registro
-        });
-    </script>
-
     <div>
         <img src="img/Cobrar300x100.png" alt="COBRAR">
     </div>
-
     <div>
         <h1>Motivo:</h1>
         <input type="text" id="motivo" name="motivo" placeholder="...">
-        
         <h1>Monto a Cobrar</h1>
-        <input type="number" id="cantidad" name="cantidad" placeholder="$" maxlength="4"><br><br><br><br>
-    
+        <input type="number" id="cantidad" name="cantidad" placeholder="$" maxlength="4">
+        <h1>Nombre Usuario</h1>
+        <input type="text" id="NomUsuario" name="nombre">
+        <br><br><br><br>
         <button class="aceptar" onclick="generarQR()">Aceptar</button>
         <h1>Escanea</h1>
         <div class="qr" id="qrcode"></div>
@@ -43,5 +36,6 @@
 </body>
 <script src="js/qr.js"></script>
 <script src="js/qrcode.min.js"></script>
-
 </html>
+
+
