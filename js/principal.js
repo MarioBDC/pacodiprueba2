@@ -18,7 +18,7 @@ var cardAdds = document.getElementById("cardAdds");
 // Agregar un evento de click al botón de registro
 cardAdds.addEventListener("click", function () {
   // Redirigir al usuario a la página de registro
-  window.location.href = "php/obtener_tarjetas.php";
+  window.location.href = "tarjetasAnadidas.html";
 });
 
 //-----------BOTÓN PARA IR A VENTANA OPCIONES------------
