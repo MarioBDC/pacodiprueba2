@@ -14,6 +14,6 @@ var datosPago = document.getElementById("datosPago");
 // Agregar un evento de click al botón de registro
 datosPago.addEventListener("click", function () {
   
-  window.location.href = "SelectCard.html";
+  window.location.href = "SelecCard.html";
 });
 
