@@ -1,0 +1,384 @@
+:root{
+  --blanco: #ffffff;
+  --oscuro: #212121;
+  --primario: #ffc107;
+  --secundario: #0097a7;
+  --gris: #757575;
+  --rojo: #ff0000;
+}
+/* ------------------------------Carrusel-------------------------------------*/
+/* Arrows */
+.responsive .slick-prev {
+  z-index: 1;
+  padding: 60px 200px 60px 20px;
+  border: 1px solid red;
+  opacity: 0;
+}
+.responsive .slick-next {
+  z-index: 1;
+  padding: 60px 200px 60px 20px;
+  border: 1px solid red;
+  opacity: 0;
+}
+.slick-next{
+  right: 0px;
+}
+.slick-prev{
+  left: 0px;
+}
+/* Slick Center */
+.cl img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  box-shadow: rgb(0 0 0) 0px 16px 10px -10px;
+}
+.cl {
+  padding: 5px;
+  position: relative;
+}
+
+@media (min-width: 768px) {
+  .cl {
+    padding: 10px;
+  }
+}
+/* Dots Slider */
+.slick-dots li button:before {
+  color: #ff0000;
+  left: 0;
+  top: 0;
+  opacity: 1;
+  content: "•";
+  width: 20px;
+  height: 20px;
+  font-size: 10px;
+  line-height: 20px;
+  position: absolute;
+  text-align: center;
+}
+.slick-dots li.slick-active button:before {
+  color: #000000;
+}
+
+
+/* ------------------------------sección Uno-----------------------------------*/
+.img-index{
+  background-image: url(../img/Logos/IconoPNG.png);
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 17.1rem;
+  height: 9rem;
+}
+
+.hero{
+  /*background-image: linear-gradient(to top, rgb(255, 255, 255) 0%, rgb(253, 158, 69) 70%);*/
+  background-color:var(--primario);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 300px;
+  position: relative;
+  text-align: center;
+  font-weight: bold;
+}
+
+.contenido-hero {
+  position: absolute;
+  background-color: rgba(0, 0, 0, .1);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+/*Cuando la ventana tenga entre 0 y 199 pixeles de anchura las letras tendrán
+1.5rem de tamaño */
+.contenido-hero h2, .contenido-hero p{
+  color: black;
+  font-size: 1.6rem;
+}
+
+/* -------------------------------------Mapa----------------------------*/
+.mapa{
+  text-align: center;
+  position: relative;
+}
+
+/* -------------------------------------Tipos de pantalla---------------------------------------*/
+/*Cuando la ventana tenga entre 200 a 250 pixeles de anchura */
+@media (min-width: 216px) {
+  h1{
+      font-size: 2.6rem;
+  }
+
+  .hero{
+      height: 300px;
+  }
+
+  .contenido-hero h2, .contenido-hero p{
+      font-size: 2rem;
+  }
+}
+
+/*Cuando la ventana tenga entre 250 a 300 pixeles de anchura */
+@media (min-width: 250px) {
+  h1{
+      font-size: 2.6rem;
+  }
+
+  .hero{
+      height: 340px;
+  }
+
+  .img-index{
+      width: 20.9rem;
+      height: 11rem;
+  }
+}
+
+/*Cuando la ventana tenga 279 a 300 pixeles*/
+@media (min-width: 279px) {
+  h1{
+      font-size: 3.4rem;
+  }
+
+  .hero{
+      height: 400px;
+  }
+
+  .img-index{
+      width: 25.6rem;
+      height: 13.5rem;
+  }
+  
+  /*Cuando la ventana tenga entre 0 y 199 pixeles de anchura las letras tendrán
+  1.5rem de tamaño */
+  .contenido-hero h2, .contenido-hero p{
+      color: black;
+      font-size: 2.8rem;
+  }
+}
+
+/*Cuando la ventana tenga entre 235 y 324 pixeles de anchura las letras tendrán
+2rem de tamaño */
+@media (min-width: 300px) {
+  h1{
+      font-size: 3.6rem;
+  }
+
+  .hero{
+      height: 400px;
+  }
+
+  .img-index{
+      width: 26.6rem;
+      height: 14rem;
+  }
+}
+
+/*Cuando la ventana tenga 325 a 350 pixeles */
+@media (min-width: 325px) {
+  h1{
+      font-size: 4rem;
+  }
+
+  .hero{
+      height: 425px;
+  }
+
+  .img-index{
+      width: 28.5rem;
+      height: 15rem;
+  }
+  
+}
+
+/*Cuando la ventana tenga 350 a 374 pixeles*/
+@media (min-width: 350px) {
+  h1{
+      font-size: 4rem;
+  }
+
+  .hero{
+      height: 435px;
+  }
+
+  .img-index{
+      width: 30.4rem;
+      height: 16rem;
+  }
+}
+
+/*Cuando la ventana tenga 374 a 400 pixeles*/
+@media (min-width: 374px) {
+  h1{
+      font-size: 4.5rem;
+  }
+
+  .hero{
+      height: 470px;
+  }
+
+  .img-index{
+      width: 32.3rem;
+      height: 17rem;
+  }
+  
+  .contenido-hero h2, .contenido-hero p{
+      color: black;
+      font-size: 2.9rem;
+  }
+}
+
+/*Cuando la ventana tenga 400 a 425 pixeles*/
+@media (min-width: 400px) {
+  h1{
+      font-size: 5rem;
+  }
+
+  .hero{
+      height: 500px;
+      box-sizing: border-box;
+  }
+
+  .img-index{
+      width: 34.2rem;
+      height: 18rem;
+  }
+}
+
+@media (min-width: 425px) {
+  h1{
+      font-size: 5.4rem;
+  }
+
+  .hero{
+      height: 510px;
+  }
+
+  .img-index{
+      width: 36.1rem;
+      height: 19rem;
+  }
+  
+  .contenido-hero h2, .contenido-hero p{
+      color: black;
+      font-size: 3rem;
+  }
+}
+
+/*Cuando la ventana tenga 450 a 475 pixeles*/
+@media (min-width: 450px) {
+  h1{
+      font-size: 5.2rem;
+  }
+
+  .hero{
+      height: 520px;
+  }
+
+  .img-index{
+      width: 38rem;
+      height: 20rem;
+  }
+}
+
+/*Cuando la ventana tiene 475 a 500 pixeles*/
+@media (min-width: 475px) {
+  h1{
+      font-size: 5.8rem;
+  }
+
+  .hero{
+      height: 605px;
+  }
+
+  .img-index{
+      width: 41.8rem;
+      height: 22rem;
+  }
+  
+  .contenido-hero h2, .contenido-hero p{
+      color: black;
+      font-size: 3.4rem;
+  }
+}
+
+
+@media (min-width: 500px) {
+  h1{
+      font-size: 6.1rem;
+  }
+
+  .hero{
+      height: 610px;
+  }
+
+  .img-index{
+      width: 43.7rem;
+      height: 23rem;
+  }
+  
+  .contenido-hero h2, .contenido-hero p{
+      color: black;
+      font-size: 3.7rem;
+  }
+}
+
+
+@media (min-width: 550px) {
+  h1{
+      font-size: 6.7rem;
+  }
+
+  .hero{
+      height: 630px;
+  }
+
+  .img-index{
+      width: 45.6rem;
+      height: 24rem;
+  }
+}
+
+@media (min-width: 600px) {
+  h1{
+      font-size: 7rem;
+  }
+
+  .hero{
+      height: 605px;
+  }
+
+  .img-index{
+      width: 49.4rem;
+      height: 26rem;
+  }
+}
+
+
+/*Cuando la ventana tenga 720 pixeles de anchura o menos, la página web tendrá las siguientes características*/
+
+@media (min-width: 649px) {
+  h1{
+      font-size: 8.3rem;
+  }
+
+  .img-index{
+      margin-top: 0rem;
+      margin-bottom: 0rem;
+  }
+
+  .hero{
+      height: 620px;
+  }
+
+  .contenido-hero h2{
+      font-size: 15rem;
+  }
+}

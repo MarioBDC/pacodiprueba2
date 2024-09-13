@@ -1,0 +1,186 @@
+html{
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+.barrio-regular {
+    font-family: "Barrio", system-ui;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+
+body{
+    font-size: 16px;
+    font-family: 'Reem Kufi', sans-serif;
+    background-color: var(--blanco);
+
+}
+
+/*.sombras{
+    -webkit-box-shadow: -16px -13px 32px 1px rgba(255,0,0,1);
+    -moz-box-shadow: -16px -13px 32px 1px rgba(255,0,0,1);
+    box-shadow: -16px -13px 32px 1px rgba(255,0,0,1);
+    background-color: #ffffff;
+}*/
+
+h1{
+    font-size: 3.8rem;
+}
+
+h2{
+    font-size: 3rem;
+}
+
+h3{
+    font-size: 1.8rem;
+}
+
+h1, h2, h3{
+    text-align: center;
+}
+a{
+    text-align: center;
+    text-decoration: none;
+    color: red;
+}
+footer{
+    margin-bottom: 15rem;
+}
+.cabeza{
+    background-size: cover;
+}
+
+.contenedor{
+    max-width: 120rem;
+    margin: 0 auto;
+}
+
+.nav-bg{
+    background-color: rgb(255, 255, 255);
+}
+
+.navegacion-principal {
+    display: flex;
+    flex-direction: column;
+}
+
+.navegacion-principal a{
+    color: var(--blanco);
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 1rem;
+}
+
+.navegacion-principal a:hover{
+    color: red;
+    border-radius: 0rem;
+}
+
+.img-header{
+    background-image: url(../img/IconoPNG.png);
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0rem;
+    margin-bottom: 0rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 22.8rem;
+    height: 12rem;
+}
+.inicio a{
+    color: rgb(255, 255, 255);
+}
+.textoIS h1{
+    color: #ffffff;
+}
+.textoIS p, a{
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.contenedor{
+    width: auto;
+    margin: 0 auto;
+    border-radius: 2rem;
+    padding-bottom: 3rem;
+}
+
+input{
+    width: 100%;
+    margin: auto;
+    padding: 10px;
+    box-sizing: border-box;
+    font-size: 2rem;
+    border-radius: 1rem;
+}
+
+.forma-IS{
+    width: 100%;
+    margin: auto;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    margin-top: 20px;
+    border-radius: 5rem;
+    background-color: rgb(243, 15, 70);
+}
+.inicio{
+    text-align: center;
+    width: 60%;
+    margin: auto;
+    padding: 20px 10px;
+    box-sizing: border-box;
+    margin-top: 20px;
+    border-radius: 5rem;
+}
+
+.botonIS{
+    padding-top: 3rem;
+    width: 100%;
+    margin: auto;
+    box-sizing: border-box;
+    font-size: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 1rem;
+}
+.registroIS a{
+    text-align: center;
+}
+
+@media (min-width: 650px) {
+    .forma-IS{
+        width: 60%;
+        margin: auto;
+        padding: 10px 20px;
+        box-sizing: border-box;
+        margin-top: 20px;
+        border-radius: 5rem;
+    }
+    .inicio{
+        text-align: center;
+        width: 30%;
+        margin: auto;
+        padding: 20px 10px;
+        box-sizing: border-box;
+        margin-top: 20px;
+        border-radius: 5rem;
+    }
+   
+    .botonIS{
+        padding-top: 3rem;
+        width: 60%;
+        margin: auto;
+        box-sizing: border-box;
+        font-size: 2rem;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 1rem;
+    }
+}

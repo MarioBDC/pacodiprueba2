@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Formulario de Registro</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            width: 300px;
+            padding: 16px;
+            background-color: white;
+            margin: 0 auto;
+            margin-top: 100px;
+            border: 1px solid black;
+            border-radius: 4px;
+        }
+        input[type=text], input[type=password] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+        button:hover {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <label for="uname"><b>Nombre</b></label>
+        <input type="text" placeholder="Ingresa tu nombre" name="uname" required>
+
+        <label for="email"><b>Email</b></label>
+        <input type="text" placeholder="Ingresa tu Email" name="email" required>
+
+        <label for="psw"><b>Contraseña</b></label>
+        <input type="password" placeholder="Ingresa Contraseña" name="psw" required>
+
+        <button type="submit">Registrar</button>
+    </div>
+
+    <script>
+        document.querySelector("button").addEventListener("click", function(event) {
+            event.preventDefault();
+            var name = document.querySelector('input[name="uname"]').value;
+            var email = document.querySelector('input[name="email"]').value;
+            var password = document.querySelector('input[name="psw"]').value;
+            console.log("Nombre: " + name);
+            console.log("Email: " + email);
+            console.log("Contraseña: " + password);
+            // Aquí puedes agregar el código para enviar estos datos a tu base de datos
+        });
+    </script>
+</body>
+</html>
