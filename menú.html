@@ -7,10 +7,13 @@
     <title>Menú</title>
     <link rel="preload" href="css/normalize.css" as="style">
     <link rel="stylesheet" href="css/normalize.css">
+
     <link rel="preload" href="css/menu.css" as="style">
     <link rel="stylesheet" href="css/menu.css">
+
     <link rel="preload" href="css/navegacion.css" as="style">
     <link rel="stylesheet" href="css/navegacion.css">
+
     <link rel="preload" href="css/descripción.css" as="style">
     <link rel="stylesheet" href="css/descripción.css">
 
@@ -49,57 +52,41 @@
     </section>
 
     <main>
-        <!------------------ Pizzas de 36 cm --------------------->
-        <h1>PIZZAS</h1>
-        <p>36 cm de diámetro</p>
+        <!------------------ lasañas grandes --------------------->
+        <h2>LASAÑAS</h2>
+        <h1>CHAROLA COMPLETA</h1>
+        <p>(6 porciones aproximadamente)</p>
         <div class="products">
             <div class="product">
-                <img src="img/Comida/HawaianaPizza.jpg" alt="Producto 1">
-                <h3>Hawaiana</h3>
-                <p class="product-price">$150.00 MXN</p>
+                <div class="product-image">
+                    <img src="img/Comida/HawaianaPizza.jpg" alt="Producto 1" class="default-image">
+                    <img src="img/Comida/PapasFrancesa.jpg" alt="Producto 1 Hover" class="hover-image">
+                </div>
+                <h3>tradicional</h3>
+                <p class="product-price">$90.00 MXN</p>
                 <!-- Descripción del producto -->
                 <button class="product-description-btn"
-                    data-description="Deliciosa pizza con piña natural, pierna ahumada de cerdo con el mejor queso derretido y una base crujiente.">Ver
+                    data-description="Deliciosa pizza de 25 cm con piña natural, pierna ahumada de cerdo con el mejor queso derretido y una base crujiente.">Ver
                     descripción</button>
             </div>
-
             <div class="product">
-                <img src="img/Comida/PepperoniPizza.jpg" alt="Producto 2">
-                <h3>Pepperoni</h3>
-                <p class="product-price">$150.00 MXN</p>
+                <div class="product-image">
+                    <img src="img/Comida/HawaianaPizza.jpg" alt="Producto 1" class="default-image">
+                    <img src="img/Comida/PapasFrancesa.jpg" alt="Producto 1 Hover" class="hover-image">
+                </div>
+                <h3>3 quesos</h3>
+                <p class="product-price">$90.00 MXN</p>
                 <!-- Descripción del producto -->
                 <button class="product-description-btn"
-                    data-description="Sabrosa pizza con abundante pepperoni y nuestra mezcla de dos quesos y especias.">Ver
+                    data-description="Deliciosa pizza de 25 cm con piña natural, pierna ahumada de cerdo con el mejor queso derretido y una base crujiente.">Ver
                     descripción</button>
             </div>
-
             <div class="product">
-                <img src="img/Comida/TocinoAhumadoPizza.jpg" alt="Producto 3">
-                <h3>Tocino</h3>
-                <p class="product-price">$150.00 MXN</p>
-                <!-- Descripción del producto -->
-                <button class="product-description-btn"
-                    data-description="Exquisita pizza con tocino ahumado, con un toque de aceituna negra y nuestra mezcla de dos quesos y especias">Ver
-                    descripción</button>
-            </div>
-
-            <div class="product">
-                <img src="img/Comida/PTPPizza.jpg" alt="Producto 4">
-                <h3>PTP</h3>
-                <p class="product-price">$150.00 MXN</p>
-                <button class="product-description-btn"
-                    data-description="Espectacular pizza con pepperoni, tocino ahumado y pimiento verde con un toque de aceituna negra y nuetra mezcla de dos quesos y especias.">Ver
-                    descripción</button>
-            </div>
-            <!-- Agrega más productos aquí -->
-        </div><br><br>
-
-        <!------------------ Pizzas de 25 cm --------------------->
-        <p>25 cm de diámetro</p>
-        <div class="products">
-            <div class="product">
-                <img src="img/Comida/HawaianaPizza.jpg" alt="Producto 1">
-                <h3>Pizza Hawaiana 25 cm</h3>
+                <div class="product-image">
+                    <img src="img/Comida/HawaianaPizza.jpg" alt="Producto 1" class="default-image">
+                    <img src="img/Comida/PapasFrancesa.jpg" alt="Producto 1 Hover" class="hover-image">
+                </div>
+                <h3>fungi</h3>
                 <p class="product-price">$90.00 MXN</p>
                 <!-- Descripción del producto -->
                 <button class="product-description-btn"
@@ -107,96 +94,53 @@
                     descripción</button>
             </div>
 
-            <div class="product">
-                <img src="img/Comida/PepperoniPizza.jpg" alt="Producto 2">
-                <h3>Pizza Pepperoni 25 cm</h3>
-                <p class="product-price">$80.00 MXN</p>
-                <button class="product-description-btn"
-                    data-description="Sabrosa pizza de 25 cm con abundante pepperoni y nuestra mezcla de dos quesos y especias.">Ver
-                    descripción</button>
-            </div>
-
-            <div class="product">
-                <img src="img/Comida/TocinoAhumadoPizza.jpg" alt="Producto 3">
-                <h3>Pizza Tocino Ahumado 25 cm</h3>
-                <p class="product-price">$90.00 MXN</p>
-                <button class="product-description-btn"
-                    data-description="Exquisita pizza de 25 cm con tocino ahumado, con un toque de aceituna negra y nuestra mezcla de dos quesos y especias">Ver
-                    descripción</button>
-                <!-- Boton Paypal -->
-
-            </div>
-
-            <div class="product">
-                <img src="img/Comida/PTPPizza.jpg" alt="Producto 4">
-                <h3>PTP 25 cm</h3>
-                <p class="product-price">$90.00 MXN</p>
-                <button class="product-description-btn"
-                    data-description="Espectacular pizza de 25 cm con pepperoni, tocino ahumado y pimiento verde con un toque de aceituna negra y nuetra mezcla de dos quesos y especias.">Ver
-                    descripción</button>
-                <!-- Boton Paypal -->
-
-            </div>
-        </div><br><br>
-
-        <h1>PAPAS FRANCESA</h1>
-        <div class="products">
-            <div class="product">
-                <img src="img/Comida/PapasFrancesa.jpg" alt="Papas Francesas">
-                <h3>Papas Francesas Normales</h3>
-                <p class="product-price">$50.00 MXN</p>
-                <button class="product-description-btn" data-description="500 grs en crudo: Naturales y cortadas al momento. 
-                Naturales: Con Sal de grano o Sal Pimienta limón de la casa.">Ver
-                    descripción</button>
-                <!-- Boton Paypal -->
-
-            </div>
-            <div class="product">
-                <img src="img/Comida/HawaianaPapasFrancesa.jpg" alt="Papas Francesa Hawaiana">
-                <h3>Papas Francesas Hawaiana</h3>
-                <p class="product-price">$100.00 MXN</p>
-                <button class="product-description-btn" data-description="500 grs en crudo: Naturales y cortadas al momento.
-                Hawaiana: Con piña natural, pierna ahumada de cerdo y nuestra mezcla de dos quesos y alioli.">Ver
-                    descripción</button>
-                <!-- Boton Paypal -->
-
-            </div>
-            <div class="product">
-                <img src="img/Comida/TocinadaPapasFrancesas.jpg" alt="Papas Francesa Tocinada">
-                <h3>Papas Francesas Tocinada</h3>
-                <p class="product-price">$100.00 MXN</p>
-                <button class="product-description-btn" data-description="500 grs en crudo: Naturales y cortadas al momento.
-                Tocinada: Con tocino ahumado, un toque de aceituna negra y nuestra mezcla de dos quesos y alioli.">Ver
-                    descripción</button>
-                <!-- Boton Paypal -->
-
-            </div>
+            <!-- Agrega más productos aquí -->
         </div>
 
-        <br><br>
-        <h1>ALITAS y SINHUESITOS (BONELESS)</h1>
+        <!------------------ lasañas medianas --------------------->
+        <h1>MEDIA CHAROLA</h1>
+        <p>(2 porciones aproximadamente)</p>
         <div class="products">
-            <div class="product productalitas">
-
-                <img src="img/Comida/Alitas.jpg" alt="Producto 1">
-                <h3>Alitas</h3>
-                <p class="product-price">$100.00 MXN - $460.00 MXN</p>
-                <button class="product-description-btn" data-description="Salsas de alta cocina, recetas 100% naturales, preparadas a base de frutas,
-                    vegetales y especias por el Chef! NO compramos ni mezclamos salsas de galón ni de lata">Ver
-                    descripción</button>
-
-            </div>
-
-            <div class="product productalitas">
-                <img src="img/Comida/Boneless.jpg" alt="SINHUESITOS (BONELESS)">
-                <h3> 370 grs* SINHUESITOS (BONELESS)</h3>
-                <p class="product-price">$150.00 MXN</p>
+            <div class="product">
+                <div class="product-image">
+                    <img src="img/Comida/HawaianaPizza.jpg" alt="Producto 1" class="default-image">
+                    <img src="img/Comida/PapasFrancesa.jpg" alt="Producto 1 Hover" class="hover-image">
+                </div>
+                <h3>tradicional</h3>
+                <p class="product-price">$90.00 MXN</p>
+                <!-- Descripción del producto -->
                 <button class="product-description-btn"
-                    data-description="Porción de 255 a 265 grs de centros 
-                de pechuga de pollo del día (agregar la cobertura y las salsas) Resultando un total de casi 370 grs">Ver
+                    data-description="Deliciosa pizza de 25 cm con piña natural, pierna ahumada de cerdo con el mejor queso derretido y una base crujiente.">Ver
                     descripción</button>
             </div>
+            <div class="product">
+                <div class="product-image">
+                    <img src="img/Comida/HawaianaPizza.jpg" alt="Producto 1" class="default-image">
+                    <img src="img/Comida/PapasFrancesa.jpg" alt="Producto 1 Hover" class="hover-image">
+                </div>
+                <h3>3 quesos</h3>
+                <p class="product-price">$90.00 MXN</p>
+                <!-- Descripción del producto -->
+                <button class="product-description-btn"
+                    data-description="Deliciosa pizza de 25 cm con piña natural, pierna ahumada de cerdo con el mejor queso derretido y una base crujiente.">Ver
+                    descripción</button>
+            </div>
+            <div class="product">
+                <div class="product-image">
+                    <img src="img/Comida/HawaianaPizza.jpg" alt="Producto 1" class="default-image">
+                    <img src="img/Comida/PapasFrancesa.jpg" alt="Producto 1 Hover" class="hover-image">
+                </div>
+                <h3>fungi</h3>
+                <p class="product-price">$90.00 MXN</p>
+                <!-- Descripción del producto -->
+                <button class="product-description-btn"
+                    data-description="Deliciosa pizza de 25 cm con piña natural, pierna ahumada de cerdo con el mejor queso derretido y una base crujiente.">Ver
+                    descripción</button>
+            </div>
+
+            <!-- Agrega más productos aquí -->
         </div>
+        </div><br>
     </main>
 
     <!-- Ventana de descripciones -->
@@ -208,14 +152,27 @@
         </div>
     </div>
 
+    <p>Haz tu pedido</p>
     <nav class="navegacion">
         <div class="navegacion_logoRedes">
-            <a href="index.html"><img src="img/RedesSociales/Facebook.png" alt="Logo de la empresa"></a>
-            <a href="index.html"><img src="img/RedesSociales/Instagram.png" alt="Logo de la empresa"></a>
-            <a href="index.html"><img src="img/RedesSociales/threads.png" alt="Logo de la empresa"></a>
-            <a href="index.html"><img src="img/RedesSociales/tiktok.png" alt="Logo de la empresa"></a>
-            <a href="index.html"><img src="img/RedesSociales/Twitter.png" alt="Logo de la empresa"></a>
-            <a href="index.html"><img src="img/RedesSociales/Youtube.png" alt="Logo de la empresa"></a>
+            <a href="https://www.facebook.com/profile.php?id=61565691454185"><img src="img/Comida/wa.png"
+                    alt="Logo de la empresa"></a>
+            <a href="https://www.instagram.com/xaloscocina/"><img src="img/Comida/rappi.png"
+                    alt="Logo de la empresa"></a>
+            <a href="https://www.instagram.com/xaloscocina/"><img src="img/Comida/uber.png"
+                    alt="Logo de la empresa"></a>
+            <a href="https://www.instagram.com/xaloscocina/"><img src="img/Comida/didi.png"
+                    alt="Logo de la empresa"></a>
+        </div>
+    </nav>
+
+    <p>Redes Sociales</p>
+    <nav class="navegacion">
+        <div class="navegacion_logoRedes">
+            <a href="https://www.facebook.com/profile.php?id=61565691454185"><img src="img/RedesSociales/Facebook.png"
+                    alt="Logo de la empresa"></a>
+            <a href="https://www.instagram.com/xaloscocina/"><img src="img/RedesSociales/Instagram.png"
+                    alt="Logo de la empresa"></a>
         </div>
     </nav>
 
