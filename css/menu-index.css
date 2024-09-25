@@ -52,42 +52,40 @@ main {
   padding: 2rem;
 }
 
-.products{
+.products {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 4fr));
-  grid-gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Cambiado 4fr a 1fr */
+  grid-gap: 1rem;
 }
 
 /* Estilo para el enlace que se verá como un botón */
 .my-button {
   display: inline-block;
   padding: 10px 20px;
-  background-color: #d0ff00; /* Puedes cambiar este color al que prefieras */
+  background-color: #d0ff00;
   color: #ff0000;
   text-decoration: none;
   border-radius: 5px;
   font-weight: bold;
   text-align: center;
-  transition: background-color 0.3s ease; /* Agregamos una transición suave al cambio de color */
-
-  /* Para que esté centrado horizontalmente */
+  transition: background-color 0.3s ease;
   margin: 0 auto;
 }
 
-.button-vermenu{
+.button-vermenu {
   text-align: center;
 }
 
 /* Estilo para adaptar a cualquier pantalla */
 @media screen and (max-width: 768px) {
   .my-button {
-    width: 50%; /* Ocupará todo el ancho disponible en pantallas pequeñas */
+    width: 50%;
   }
 }
 
 @media screen and (max-width: 345px) {
   .my-button {
-    width: 100%; /* Ocupará todo el ancho disponible en pantallas pequeñas */
+    width: 100%;
   }
 }
 
@@ -95,14 +93,13 @@ main {
   background-color: var(--blanco);
   padding: 1.5rem;
   border-radius: 5px;
-  /*box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);*/
   text-align: center;
 }
 
 .product img {
   max-width: 100%;
-  height: 60%;
-  border-radius: 100%;
+  height: auto; /* Cambiado a auto */
+  border-radius: 50%; /* Cambiado para mejorar la compatibilidad */
 }
 
 .product h3 {
@@ -142,14 +139,13 @@ footer {
   font-size: 1.4rem;
 }
 
-
 @media (max-width: 768px) {
   h1 {
     font-size: 3.8rem;
   }
 
   .products {
-    grid-template-columns: repeat(auto-fit, minmax(250px, 4fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   }
 
   .product h3 {
@@ -167,7 +163,7 @@ footer {
   }
 
   .products {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 2fr));
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Cambiado a 1fr */
   }
 
   .product {
@@ -194,14 +190,12 @@ footer {
 
 @media (max-width: 474px) {
   .products {
-    grid-template-columns: repeat(auto-fit, minmax(150px, 2fr));
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Cambiado a 1fr */
   }
-
 }
 
 @media (max-width: 256px) {
   .products {
-    grid-template-columns: repeat(auto-fit, minmax(auto, 2fr));
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Cambiado a 1fr */
   }
-
 }
