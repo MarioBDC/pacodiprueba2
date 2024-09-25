@@ -97,7 +97,7 @@ main {
 }
 
 .product img {
-  max-width: 100%;
+  max-width: 60%;
   height: auto; /* Cambiado a auto */
   border-radius: 50%; /* Cambiado para mejorar la compatibilidad */
 }
