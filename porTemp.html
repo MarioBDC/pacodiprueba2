@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="img/Logos/favicon.ico" type="image/x-icon">
+
+    <title>Menú Navideño</title>
+
+    <link rel="preload" href="css/navegacion.css" as="style">
+    <link rel="stylesheet" href="css/navegacion.css">
+
+    <link rel="stylesheet" href="css/temporada.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barrio&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <nav class="navegacion">
+        <div class="navegacion_logo">
+            <a href="index.html"><img src="img/Logos/Logo.png" alt="Logo de la empresa"></a>
+        </div>
+        <input type="checkbox" id="toggle-menu" class="toggle-menu">
+        <label for="toggle-menu" class="menu-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+        <ul class="navegacion_lista">
+            <li><a class="navegacion_enlace" href="index.html">Inicio</a></li>
+            <li><a class="navegacion_enlace" href="menú.html">Catálogo</a></li>
+            <li><a class="navegacion_enlace navegacion_enlace--activo" href="">Temporada Navideña</a></li>
+        </ul>
+    </nav>
+
+    <section class="banner">
+        <img src="img/temporada/bannerTemp.png" alt="Promoción Navideña">
+    </section>
+
+    <section class="menu-section">
+        <h1>Opciones Navideños Sobre Pedido</h1>
+        <div class="menu-container">
+            <div class="menu-item">
+                <img src="img/temporada/ensaladaLogo.png" alt="Lasaña Clásica">
+                <div class="info">
+                    <h3>Ensaladas</h3>
+                    <p>Ensalada Waldorf</p>
+                    <p>Coleslaw (de Col)</p>
+                    <p>Kartoffelsalat (papa)</p>
+                    <p>Ensaladilla Rusa</p>
+                    <p>Frutos del Edén</p>
+                    <h3>$290.00</h3>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="img/temporada/lomo.png" alt="Fusión de Quesos">
+                <div class="info">
+                    <h3>Fuertes</h3>
+                    <p>Pierna de Cerdo Mechado picante al Horno.</p>
+                    <h3>$590.00 Kg</h3>
+                    <p>Pierna de Cerdo Mechado en Gravy de cerveza negra.</p>
+                    <h3>$580.00 Kg</h3>
+                    <p>Pollo Relleno al Horno en Adobo Español y Mantequilla.</p>
+                    <h3>$490.00 Kg</h3>
+                    <p>Pollo Relleno al Horno en Salsa Gastrique de Naranja Picante.</p>
+                    <h3>$490.00 Kg</h3>
+                    <p>Lomo Mechado de Cerdo en Gravy de Cerveza Negra.</p>
+                    <h3>$580.00 Kg</h3>
+                    <p>Lomo de Cerdo Relleno de Frutos Secos y Farsa de Ave con Gravy al Tinto.</p>
+                    <h3>$590.00 Kg</h3>
+                    <h3>*Todos los fuertes incluyen guarnición*</h3>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="img/temporada/camaron.png" alt="Alla Ratatouille">
+                <div class="info">
+                    <h3>Canapés</h3>
+                    <p>Caja con 16 piezas</p>
+                    <h3>$350.00</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
