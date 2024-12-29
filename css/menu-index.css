@@ -19,7 +19,7 @@ html {
 }
 
 body {
-  font-family: "Barrio", system-ui;
+  font-family: "Jost", serif;
   background-color: var(--blanco);
   font-size: 1.6rem;
   line-height: 1.5;
